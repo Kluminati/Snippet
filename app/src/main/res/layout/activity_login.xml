@@ -1,0 +1,271 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lgnBackGround"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background_photo"
+    android:gravity="center_vertical"
+    android:layoutDirection="ltr"
+    android:onClick="hideKeyboard"
+    android:orientation="vertical"
+    android:paddingBottom="50dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="50dp"
+    android:textCursorDrawable="@color/cardview_dark_background"
+    tools:context=".LoginActivity"
+    >
+
+
+
+    <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/snippetObjectLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        card_view:cardCornerRadius="10dp"
+        card_view:cardUseCompatPadding="true">
+    <!-- Login progress -->
+    <ProgressBar
+        android:id="@+id/login_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_gravity=""
+        android:layout_marginBottom="8dp"
+        android:background="#000"/>
+
+    <ScrollView
+        android:id="@+id/login_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@android:color/holo_blue_light">
+
+        <LinearLayout
+            android:id="@+id/email_login_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#04CDE5"
+
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:padding="5dp">
+
+                <AutoCompleteTextView
+                    android:id="@+id/etLoginUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/prompt_email"
+                    android:inputType="textEmailAddress"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="18dp"
+                    android:textColor="#000"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/etLoginPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/prompt_password"
+                    android:imeActionId="@+id/login"
+                    android:imeActionLabel="@string/action_sign_in_short"
+                    android:imeOptions="actionUnspecified"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:paddingBottom="8dp"
+                    android:singleLine="true" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/btnRegister"
+                    style="?android:textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:background="#FCFC20"
+                    android:text="@string/register"
+                    android:textStyle="bold" />
+                <Button
+                    android:id="@+id/btnLogin"
+                    style="?android:textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:background="#FCFC20"
+                    android:text="@string/Login"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+        </ScrollView>
+    </android.support.v7.widget.CardView>
+
+    <FrameLayout
+        android:id="@+id/registerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:visibility="gone">
+        <FrameLayout
+            android:layout_width="232dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            >
+            <android.support.v7.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/snippetObjectLayoutInner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+
+                android:orientation="horizontal"
+                card_view:cardCornerRadius="13dp"
+                card_view:cardUseCompatPadding="true">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/holo_blue_light"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:paddingTop="30dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/tvUsername"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/etRegisterUser"
+                        android:layout_alignParentTop="true"
+
+                        android:layout_alignStart="@+id/etRegisterUser"
+                        android:text="User Name"
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                    <TextView
+                        android:id="@+id/tvEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/etRegisterEmail"
+                        android:layout_alignStart="@+id/etRegisterEmail"
+                        android:layout_below="@+id/etRegisterUser"
+                        android:text="Email"
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                    <TextView
+                        android:id="@+id/tvPassword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/etResgiterPass"
+                        android:layout_alignStart="@+id/etResgiterPass"
+                        android:layout_below="@+id/etRegisterEmail"
+                        android:text="Password"
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                    <EditText
+                        android:id="@+id/etRegisterUser"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvUsername"
+                        android:layout_centerHorizontal="true"
+                        android:ems="10"
+                        android:hint="User"
+                        android:inputType="textPersonName" />
+
+                    <EditText
+                        android:id="@+id/etRegisterEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/etRegisterUser"
+                        android:layout_alignStart="@+id/etRegisterUser"
+                        android:layout_below="@+id/tvEmail"
+                        android:ems="10"
+                        android:hint="Email"
+                        android:inputType="textEmailAddress" />
+
+                    <EditText
+                        android:id="@+id/etResgiterPass"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignEnd="@+id/etRegisterEmail"
+
+                        android:layout_alignLeft="@+id/etRegisterEmail"
+                        android:layout_alignRight="@+id/etRegisterEmail"
+                        android:layout_alignStart="@+id/etRegisterEmail"
+                        android:layout_below="@+id/tvPassword"
+                        android:hint="Pass" />
+
+                    <android.support.v7.widget.CardView
+                        xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/rvButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_below="@+id/etResgiterPass"
+                        android:layout_centerHorizontal="true"
+                        android:clickable="true"
+                        android:orientation="horizontal"
+                        android:padding="5dp"
+                        card_view:cardCornerRadius="13dp"
+                        card_view:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:background="@android:color/holo_green_light"
+                            >
+                    <Button
+                        android:id="@+id/btnSubmit"
+                        style="@android:style/Widget.Material"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/etResgiterPass"
+                        android:layout_centerHorizontal="true"
+
+                        android:background="@android:color/holo_green_light"
+                        android:text="Submit\nRegistration"
+                        />
+                        <Button
+                            android:id="@+id/btnCancel"
+                            style="@android:style/Widget.Material"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/btnSubmit"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/shape_border"
+                            android:onClick="hideRegistrationFormAndDisplayLogin"
+                            android:text="Cancel" />
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+        </FrameLayout>
+    </FrameLayout>>
+</LinearLayout>
