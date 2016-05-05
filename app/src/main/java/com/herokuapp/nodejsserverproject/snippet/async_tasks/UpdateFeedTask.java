@@ -39,7 +39,7 @@ public class UpdateFeedTask extends AsyncTask<Void,Void,JSONObject> {
         super.onPostExecute(result);
 
         try {
-            if(result.get("success").toString().equals("true")) {
+            if(result !=null && result.has("success") && result.get("success").toString().equals("true")) {
                 list = extractResults(result);
                 fragment = new SnippetFragment();
                 fragment.setData(list);

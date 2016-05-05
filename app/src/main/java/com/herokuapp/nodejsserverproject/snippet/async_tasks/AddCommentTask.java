@@ -51,7 +51,7 @@ public class AddCommentTask extends AsyncTask<Void,Void,JSONObject> {
         super.onPostExecute(result);
         progressDialog.dismiss();
         try {
-            if (result.get("success").toString().equals("true")) {
+            if (result !=null && result.has("success") && result.get("success").toString().equals("true")) {
                 Toast.makeText(mainActivity, "Comment added", Toast.LENGTH_SHORT).show();
 
             } else

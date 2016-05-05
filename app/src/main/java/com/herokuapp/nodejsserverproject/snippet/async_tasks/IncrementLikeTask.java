@@ -37,7 +37,7 @@ public class IncrementLikeTask extends AsyncTask<Void,Void,JSONObject> {
     protected void onPostExecute(JSONObject result) {
         super.onPostExecute(result);
         try {
-            if (result.get("success").toString().equals("true")) {
+            if (result !=null && result.has("success") && result.get("success").toString().equals("true")) {
                 Toast.makeText(mainActivity, "Like added", Toast.LENGTH_SHORT).show();
 
             } else
